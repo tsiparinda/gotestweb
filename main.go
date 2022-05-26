@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"os"
 )
 // *** TODO dllfwelflflfwelfwefwe;
 type User struct {
@@ -45,7 +46,8 @@ func handleRequest () {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		log.Fatal("$PORT must be set")
+		port = "8080"
+		//	log.Fatal("$PORT must be set")
 	}
 
 	http.HandleFunc("/", home_page)
